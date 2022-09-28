@@ -100,7 +100,7 @@ hvor $h$ er Placks konstant og $v$ er frekvensen. Sandsyndligheden for en given 
 Hvis en elektron har en energi større end bindingsenergien for en elektron i anodematrialet, kan elektronen i anodematrialet, blive løsrevet. Dette skaber et hul, som vil udfyldt af en elektron fra en ydre skal, og vil udsende en foton med en bestem energi, som er specifik for anodematrialet og den skal, som elektronen forsvandt fra. Skallerne navngives K, L, M, N (inde fra og ude), hvor det kræver mest energi at løsriven en elektron i en K skal og mindst i en N skal grundet bindingsenergien
 
 \subsection{Røngten spektrum}
-Ved udnyttelse af bremsestråling og karaterisktisk stråling kan man bestemme matrialer udfra røngtenstråling. Med linært aftagnede bramsetråling, den karakteristike stråling. Ved leve værdier for energien af røntgenstråling vil lufte absobere store dele af streålingen og den vil derfro ikke følge den linære bremsetråling.
+Ved udnyttelse af bremsestråling og karakteristisk stråling kan man bestemme matrialer udfra røngtenstråling. Med linært aftagnede bramsetråling, den karakteristike stråling. Ved leve værdier for energien af røntgenstråling vil lufte absobere store dele af streålingen og den vil derfro ikke følge den linære bremsetråling.
 
 \subsection{Interfrens}
 Hvis en krystal bestråles med røntgenstråling vil krystalgitteret fungere som et gitter laver interfrens. Den afbøjningsvinkel hvor der konstruktive interfrens er udtrykt ved bragslov $2\cdot d \cdot sin(\Theta)=n\cdot \lambda$. Energien af en foton er beskrivet med denne formel: $E=\frac{h\cdot}{\lamda}$. Dermed er erngien for udtrykt ved afbøjningsvinklen 
@@ -121,31 +121,76 @@ Hvis en krystal bestråles med røntgenstråling vil krystalgitteret fungere som
 %Oskar og Mathias
 %Beskriv den eksperimentelle opstilling (husk en skitse) og beskriv de opnåede resultater fra deløvelse 1a grafisk og beskriv den eksperimentelle opstilling (husk en skitse)
 
-I førsøg 1 er forsøgsopstillingen således, at vi har en andoekilde, og en detektor og imellem der har vi vores prøve med en ukendt mængde af tungt absorberende stof, som måles i 2- og 3-D  
-
-I forsøg 2 er forsøgsopstillingen således, en anodekilde, sender stråling ind på en krystal, som afbøjer strålingen og rammer detektoren.
-
+I førsøg 1 er forsøgsopstillingen således, at vi har en andoekilde, og en detektor og imellem der har vi vores prøve med en ukendt mængde af tungt absorberende stof, som måles i 2- og 3-D. Ved 3D tages billeder af prøven hele vejen rundt, der blev taget 256 billeder ved de anvendte datasæt. \\\\
+Formålet med dette forsøg er at vise hvordan man laver 2d og 3d røntgen tomografi og fordele og ulemper ved dem. 
+\begin{figure}[H]
+\begin{centering}
+\includegraphics[height=8cm,angle=90]{Forsøg 1.jpg},
+\hspace{1cm}
+\par\end{centering}
+\end{figure}
+I forsøg 2 er forsøgsopstillingen således, en anodekilde, sender stråling ind på en krystal, som afbøjer strålingen og rammer detektoren. Hvor man udfra afbøjningsvinklen kan bestemme strålingsenergien for den afbøjede røngten stråle. \\\\
+Formålet med dette forsøg er at bestemme absorptionen af forskellige materialer samt vise deres karakteristiske røntgen linjer. 
+\begin{figure}[H]
+\begin{centering}
+\includegraphics[height=8cm, angle=90]{Forsøg 2.jpg}
+\hspace{1cm}
+\par\end{centering}
+\end{figure}
 \section{2-D billede analyse}
 %Mathias
-
+Vi skal lave nogle histogrammer som vi udnytter til at bestemme hvor stor del af vores prøve der er heavy. Derfor skal vi anvende historgrammerne til at adskille de to og fjerne luften og så meget legoklods som muligt. 
+\begin{figure}[H]
+\begin{centering}
+\includegraphics[height=5cm]{Histogram2d.PNG}
+\includegraphics[height=5cm]{2dhistogram0til10000.png}
+\hspace{1cm}
+\par\end{centering}
+\caption{\label{cap:2ien} Histogram over pixelværdi og deres respektive hyppighed}
+\end{figure}
+Vi skal identificerer hvad der er hvad på histogrammet. Den høje til højre må være luft da den har en lav absorbtion. Det ind imellem spiken ved 17000 må derfor være legoklodsen. Den er mere spredt,da den har lufthuller og ikke er regulær i strukturen. Dog overlapper lego klodsen lidt med kanten af prøven, da prøven her er tynderer og den tykke del af legoklodsen kan derfor ikke skæreres fra uden at slette for meget af kanten af prøven. Fra de 17000 til cirka 5000 er kun prøven og de mindre end 5000 må være den højerer absorberende del.  
+\begin{figure}[H]
+\begin{centering}
+\includegraphics[height=8cm]{2dtungogkunprøve.png}
+\hspace{1cm}
+\par\end{centering}
+\caption{\label{cap:2ien} Visualicering af prøve og den tunge del}
+\end{figure}
+På figuren overfor kan vi se fordellingen af prøven og se hvor den tunge del befinder sig. Vi fik at 15,3\% af prøven er af kraftigt absorberende materiale. 
 \section{Databehandling af 3-D billeder} 
-I dette afsnit vil vi behandle 3-D analysen en prøve. Grundet problemer i kontrasten, vil dette afsnit behandle hold 6 data af en blå prøve og ikke den røde vi har arbejdet på i tidligere afsnit. I appendix vil problemet være bedre beskrevet. 
+I dette afsnit vil vi behandle 3-D analysen en prøve. Grundet problemer i kontrasten, vil dette afsnit behandle hold 6 data af en blå prøve og ikke den røde vi har arbejdet på i tidligere afsnit. I appendix vil problemet være bedre beskrevet. \\
+\\
+Til at lave dataanalyse af 3-D tomografien, burger vi python
+\begin{figure}[H]
+\begin{centering}
+\includegraphics[height=5cm]{eks_af_prøve_blå_hold_6.png}
+\includegraphics[height=5cm]{eks2_af_prøve_hold_6.png}
+\hspace{1cm}
+\par\end{centering}
+\caption{\label{cap:2ien} To eksempler af den blå prøve, hvor man kan se de stærkt absorberende dele af prøve}
+\end{figure}
+Som set i figur 2, har vi to eksempler på skiver af vores prøve
 
+På Den blå prøve laver vi derefter analyse af den pixel-værdi som hvert enkel pixel har. Ud fra det laver vi et histogram
 \begin{figure}[H]
 \begin{centering}
 \includegraphics[height=5cm]{index ikke_xoom.png}
 \includegraphics[height=5cm]{index_zoom.png}
 \hspace{1cm}
 \par\end{centering}
-\caption{\label{cap:2ien} Anode spectrum for wolfram krystal uden filter }
+\caption{\label{cap:2ien} Hsitorgram  af pixelværdien og antal måplinger med den pixelværdi. På det til højre er den zoommet ind}
 \end{figure}
+Som et i figur 3 er det et en stort antal med pixelværdi ca. 6000, dette er luften i proven. På højre billede af figur 3 kan man se en top ved ca. 45000 dette er toppen af vores tungt absorberende prøve, da vi antager at den er normalt fordelt om kring den sætter vi grænsen for tungt absorberende prøve til 32000 i pixelværdi, derudover sætter vi grænsen for luft til at være 9000 i pixelværdi. 
 
 
+Som aflæst fra figur xx er den tunge del af prøve på $2\%$, hvilket er en stor afvigelse fra 2-D analysen, dette sker da, 2-D analysen ikke tager højde for dybten.  
 
 \section{Intensiteten som funktion af røngtenenergi for kun krystal}
 %mathias
 %Vis en graf over I(E), dvs. intensiteten af den spredte stråling I som funktion af røntgen- energien E for eksperimentet uden filter 
 % Kommenter på de karakteristiske elementer af I(E)
+
+
 
 \begin{figure}[H]
 \begin{centering}
@@ -189,7 +234,7 @@ På tabellen kan det ses, at nogle af værdierne ligger meget tæt på hinanden.
 \section{Vinkel for metaler og intensitet}
 \begin{figure}[H]
 \begin{centering}
-\includegraphics[height=6cm]{Anode spectra.png}
+\includegraphics[height=7cm]{Anode spectra.png}
 \hspace{1cm}
 \par\end{centering}
 \caption{\label{cap:2ien} Anode spectrum for wolfram med forskellige filtre }
@@ -217,15 +262,12 @@ Det kan også ses, at graferne er stigende før og efter deres store fald. Hvilk
 \section{Opgaver}
 % de 8 opgaver som skal løses
 \subsection{\bold{Opgave 1}}
-\subsubsection*{Hvad er energien af en elektron, efter at den krydset et anode/katodegab med et spændingsfald på 20 kV? -Antag, at elektronen starter fra hvile, og angiv resultatet i
-både elektronvolt og joule?}
 Definationen af en elektronvolt er den energi en elektron opnår, når den passere et spændingsfald på $1V$. Derfor må elektronen opnå en energi på $20keV$. For at omdanne det til joule skal vi multiplicerer med $1,602\cdot10^{-19} \frac{J}{eV}$, som er omskrivningsfaktoren
 \begin{equation*}
 20\cdot10^3 eV \cdot1,602\cdot10^{-19} \frac{J}{eV}=3.2\cdot10^{-15} J
 \end {equation*}
 
 \subsection{\bold{Opgave 2}}
-\subsubsection*{Hvad er hastigheden af en elektron med den ovenfor beregnede energi?}
 Den ovenfor beregnede energi er elektronens kinetiske energi, og vi kan derfor finde dens fart som $v=\sqrt{\frac{2E}{m}}$.
 Det vides at elektronens masse er $9,11\cdot10^{-31} kg$
 
@@ -305,7 +347,6 @@ Dermed kommer $9\%$ af strålingen igennem
 
 
 \subsection{\bold{Opgave 6}}
-\subsubsection*{Den direkte røntgenstråle fra en moderne synkrotronkilde kan have op til $10^{17} \frac{fotoner}{sekund}$ med en foton-energi på $30keV$. Hvad er effekten $P$, udtrykt i watt, af en sådan stråle?}
 For at finde effekten skal vi finde strålens samlet energi pr. s. Derfor skal vi multiplicerer antallet af fotoner pr. sekund med foton-energien 
 \begin{equation*}
 P=10^{17}*\frac{fotoner}{sekund}\cdot30\cdot10^{3}eV\cdot1.602\cdot10^{-19} \frac{J}{eV}=480.6W
