@@ -28,6 +28,7 @@
 % rykke kode som dette ud i en seperat fil f.eks. forside.tex og inkludere den her med \input{forside}
 \begin{titlepage}
 \centering
+
 % For forklaring af vspace og stretch, se side 115 i ".. not so short .."
 % www.ctan.org/tex-archive/info/lshort/english/lshort.pdf
 \vspace*{\stretch{1}}
@@ -69,10 +70,10 @@ Danmarks Tekniske Universitet\\
 \setcounter{page}{1} 
 
 % her skal dette med: Teori for røntgenståling og Beskriv dannelsen af røntgenstråling i en anodekilde og herunder hvordan den indsatte krystal tillader måling af intensiteten som funktion af vinkel og dermed energi.
-Røntgentstårling er elektromagnetisk stråling med en bølgelængde\
+Røntgentstårling er elektromagnetisk stråling med en bølgelængde på\
 $\lambda \backsim 1\cdot 10^{-10}m\\$
 \subsection{Anodekilde}
-Røntgen stråling bliver skabt i en anodekilde. En anodekilde består af en katode, som er et stykke af metal hvor i der løber en strøm. Mellem anoden og katoden er der et stor spændingsfald som gør at elektroner fra anoden bliver accelereret op, og skudt in i katoden. Katoden er et stykke metal som bremser elektronen kraftigt op, da den støder ind i katoden, dette skaber en ændring i det elektromagnetiske felt som skaber fotoner, og da energien er tilpashøj bliver røntgenstråling skabt.
+Røntgen stråling bliver skabt i en anodekilde. En anodekilde består af en katode og en anode. Katoden er et stykke af metal hvor i der løber en strøm. Mellem anoden og katoden er der et stor spændingsfald som gør at elektroner fra anoden bliver accelereret op, og skudt ind i katoden. Katoden er et stykke metal som bremser elektronen kraftigt op, da den støder ind i katoden, dette skaber en ændring i det elektromagnetiske felt, som skaber fotoner, og da energien er tilpashøj bliver røntgenstråling skabt.
 \subsection{Absobtion af røntgenstråling}
 Når et objekt bestråles med røntgenstråling vil det absobere noget af den stråling. Den mængde som ikke bliver absoberet beskrives ved denne formel og kaldes intensiteten af røntgensttålingen  
 
@@ -87,7 +88,7 @@ hvor $\mu$ er den attenueringskoefficenten og er
 hvor $\rho$ er densiteten $N_a$ er Avogadros tal og $M$ er Molarmassen og $\sigma _a$ beskriver sandsynligheden for at et atom absobere en røntgensfoton og $\sigma _a =(Z^4,E_\lambda^{-3})$
 
 \subsubsection{Absobtionskanter}
-Når et atom bestråles med røntgenstråling vil intensiteten som funktion af energien. Der sker dog det, at ved bestemte energier vil røntgenstrålingen kunne slå en elektron ud af en skal. Dette gør at sandsynligeheden for vekselvirkning mellem atom og røntgenstråling stiger, altså stiger absobtionen. 
+Når et atom bestråles med røntgenstråling vil intensiteten falde som funktion af energien. Der sker dog det, at ved bestemte energier vil røntgenstrålingen kunne slå en elektron ud af en skal. Dette gør at sandsynligeheden for vekselvirkning mellem atom og røntgenstråling stiger, altså stiger absobtionen. 
 
 \subsection{Bremsestråling}
 Når en elektron rammer adonematrialet i et anoderør, vil der blive skabt en foton. Dette klades også bremsestråling, som er når en elektron oplever en acceleration og udsender en foton. Energien af fotoen er bestemt med denne som
@@ -109,14 +110,6 @@ Hvis en krystal bestråles med røntgenstråling vil krystalgitteret fungere som
 \end{equation}
 
 
-
-\begin{figure}
-\begin{centering}
-\includegraphics[width=0.9\columnwidth]{}
-\par\end{centering}
-\caption{\label{cap:nerd_sniping}Et eksempel på en figur. Husk at figuren skal indeholde en selvforklarende figurtekst.}
-\end{figure}
-
 \section{Opstiling af forsøgene}
 %Oskar og Mathias
 %Beskriv den eksperimentelle opstilling (husk en skitse) og beskriv de opnåede resultater fra deløvelse 1a grafisk og beskriv den eksperimentelle opstilling (husk en skitse)
@@ -125,8 +118,9 @@ I førsøg 1 er forsøgsopstillingen således, at vi har en andoekilde, og en de
 Formålet med dette forsøg er at vise hvordan man laver 2d og 3d røntgen tomografi og fordele og ulemper ved dem. 
 \begin{figure}[H]
 \begin{centering}
-\includegraphics[height=8cm,angle=90]{Forsøg 1.jpg},
+\includegraphics[height=8cm,angle=-90]{Forsøg 1.jpg}
 \hspace{1cm}
+\caption{\label{cap:2ien}}{Skitse af forsøgsopstilling til forsøg 1}
 \par\end{centering}
 \end{figure}
 I forsøg 2 er forsøgsopstillingen således, en anodekilde, sender stråling ind på en krystal, som afbøjer strålingen og rammer detektoren. Hvor man udfra afbøjningsvinklen kan bestemme strålingsenergien for den afbøjede røngten stråle. \\\\
@@ -135,6 +129,7 @@ Formålet med dette forsøg er at bestemme absorptionen af forskellige materiale
 \begin{centering}
 \includegraphics[height=8cm, angle=90]{Forsøg 2.jpg}
 \hspace{1cm}
+\caption{\label{ap:2ien}{Skitse af forsøgsopstilling til forsøg 2}}
 \par\end{centering}
 \end{figure}
 \section{2-D billede analyse}
@@ -148,23 +143,23 @@ Vi skal lave nogle histogrammer som vi udnytter til at bestemme hvor stor del af
 \par\end{centering}
 \caption{\label{cap:2ien} Histogram over pixelværdi og deres respektive hyppighed}
 \end{figure}
-Vi skal identificerer hvad der er hvad på histogrammet. Den høje til højre må være luft da den har en lav absorbtion. Det ind imellem spiken ved 17000 må derfor være legoklodsen. Den er mere spredt,da den har lufthuller og ikke er regulær i strukturen. Dog overlapper lego klodsen lidt med kanten af prøven, da prøven her er tynderer og den tykke del af legoklodsen kan derfor ikke skæreres fra uden at slette for meget af kanten af prøven. Fra de 17000 til cirka 5000 er kun prøven og de mindre end 5000 må være den højerer absorberende del.  
+Vi skal identificerer hvad der er hvad på histogrammet. Den høje til højre må være luft da den har en lav absorbtion. Det ind imellem spiken ved 17000 må derfor være legoklodsen. Den er mere spredt,da den har lufthuller og ikke er regulær i strukturen. Dele af legoklodsen absorberer lige så meget som kanten af prøven. Det skyldes, at prøven her er tyndere og den del af legoklodsen man stadig kan se er ret tyk. Derfor vil man fjerne for meget af prøven, hvis man vil fjerne resten af legoklodsen. Fra de 17000 til cirka 5000 er kun prøven og de mindre end 5000 må være den højerer absorberende del.  
 \begin{figure}[H]
 \begin{centering}
-\includegraphics[height=8cm]{2dtungogkunprøve.png}
+\includegraphics[height=6.5cm]{2dtungogkunprøve.png}
 \hspace{1cm}
 \par\end{centering}
 \caption{\label{cap:2ien} Visualicering af prøve og den tunge del}
 \end{figure}
-På figuren overfor kan vi se fordellingen af prøven og se hvor den tunge del befinder sig. Vi fik at 15,3\% af prøven er af kraftigt absorberende materiale. 
+På figuren overfor kan vi se fordellingen af prøven og se hvor den tunge del befinder sig. Vi fik, at 15,3\% af prøven er af kraftigt absorberende materiale. 
 \section{Databehandling af 3-D billeder} 
 I dette afsnit vil vi behandle 3-D analysen en prøve. Grundet problemer i kontrasten, vil dette afsnit behandle hold 6 data af en blå prøve og ikke den røde vi har arbejdet på i tidligere afsnit. I appendix vil problemet være bedre beskrevet. \\
 \\
 Til at lave dataanalyse af 3-D tomografien, burger vi python
 \begin{figure}[H]
 \begin{centering}
-\includegraphics[height=5cm]{eks_af_prøve_blå_hold_6.png}
-\includegraphics[height=5cm]{eks2_af_prøve_hold_6.png}
+\includegraphics[height=5cm]{eks1_af_objekt_hold6.png}
+\includegraphics[height=5cm]{eks2_af_objekt_hold6.png}
 \hspace{1cm}
 \par\end{centering}
 \caption{\label{cap:2ien} To eksempler af den blå prøve, hvor man kan se de stærkt absorberende dele af prøve}
@@ -182,8 +177,14 @@ På Den blå prøve laver vi derefter analyse af den pixel-værdi som hvert enke
 \end{figure}
 Som et i figur 3 er det et en stort antal med pixelværdi ca. 6000, dette er luften i proven. På højre billede af figur 3 kan man se en top ved ca. 45000 dette er toppen af vores tungt absorberende prøve, da vi antager at den er normalt fordelt om kring den sætter vi grænsen for tungt absorberende prøve til 32000 i pixelværdi, derudover sætter vi grænsen for luft til at være 9000 i pixelværdi. 
 
-
-Som aflæst fra figur xx er den tunge del af prøve på $2\%$, hvilket er en stor afvigelse fra 2-D analysen, dette sker da, 2-D analysen ikke tager højde for dybten.  
+\begin{figure}[H]
+\begin{centering}
+\includegraphics[height=5cm]{Tungt_og _objekt_hold_3_ny.png}
+\hspace{1cm}
+\par\end{centering}
+\caption{\label{cap:2ien} Vi ser hvad der er prøven og hvad der er tungt absoberende til et givent stykke af prøven}
+\end{figure}
+I Python opdeles nu prøve og tungtabsoberende, som set i figur 6. Herefter findes den den tunget absobernede del af prøve til $2\%$, hvilket er en stor afvigelse fra 2-D analysen. afvigelsen fra 2-D giver dog god mening da 2-D analysen ikke tager højde for at objektet er i 3-D og dermed at der er noget prøve både for og bag det tungtabsobendeß
 
 \section{Intensiteten som funktion af røngtenenergi for kun krystal}
 %mathias
@@ -200,8 +201,11 @@ Som aflæst fra figur xx er den tunge del af prøve på $2\%$, hvilket er en sto
 \par\end{centering}
 \caption{\label{cap:2ien} Anode spectrum for wolfram krystal uden filter }
 \end{figure}
-Ved anvendelse af vores pythonprogram, hvor grafen er konstrueret kan vi bestemme ved hvilke værdier der er karakteristisk stråling, og eftertjekke det med de udleveret værdier. 
-\\ På det udleverede dokument over absorbtions og emmissions energier for wolfram. Her ligger K springende ved for høje energi niveauer. Disse vises ikke da vores røngten stråle "kun" var på 35keV mens K springende ligger omkring 60keV. De andre burde være mulige. I tabellen under er de målte værdier sat op overfor de angivet for kartakteristk stråling for wolfram. Enheden i tabellen er eV. 
+Grafen burde gå i 0 ved 35keV, da det er den energi elektronerne accelereres til. Det skyldes, at der anvendes et Geiger Muller rør som kun kan måle intensitet, og energien er i stedet udregnet ved diffraktion gennem krystalstruktur ved måling af diffraktions vinklen. De høje energier er fundet ved små vinkler, og derfor kan røntgen strålingen, have ramt sensoren uden at lave diffraktion med krystallen.\\\\
+Ved anvendelse af vores pythonprogram, hvor grafen er konstrueret kan vi bestemme ved hvilke værdier der er karakteristisk stråling, og sammenligne det med værdierne i figur 8. 
+\\ K springende er ved for høje energi niveauer og  de vises ikke, da vores røntgen stråle "kun" var på 35keV, mens K springende ligger omkring 60keV. De andre burde være mulige. I tabellen under er de målte værdier sat op overfor de angivet for kartakteristk stråling for wolfram. Enheden i tabellen er eV.
+\begin{figure}[H]
+ 
 \begin{center}
 \begin{tabular}{||c c c ||} 
  \hline
@@ -229,8 +233,13 @@ $L_{\beta3}$ & 9819  & 9850  \\
  \hline
 \end{tabular}
 \end{center}
-På tabellen kan det ses, at nogle af værdierne ligger meget tæt på hinanden. Det var ikke muligt, at se alle spectral linjerne indtil man zoomede ind i intervallet 8-10, da der her ligger linjerne rigtigt tætte. Det ser ud som om vi har fundet alle de karakteristiske linjer der er angivet på det udleveret ark. Derudover har vi fundet nogle spikes ved energier som ikke er på det udlevereret ark. (Spørge til kursus onsdag)\\
-\\Grafen burde gå i 0 ved 35keV, da det er den energi elektronerne accelereres til. Det skyldes at vores sensor ikke kan måle energierne af de fotoner der rammer men blot tæller hvor mange der rammer, men i stedet er udregnet ved diffraktion gennem krystalstruktur ved måling af diffraktionsvinklen. De høje energier er fundet ved små vinkler og derfor kan røngten strålingen have ramt sensoren uden at lave differaktion med crystallen.
+   \centering
+    \includegraphics{}
+    \caption{Tabelværdier og vores målte værdier, samt hvilke emissions linjer de forskellige energier passer til.\cite{X-ray absorption and emmission energies of elements}}
+    \label{fig:my_label}
+\end{figure}
+På tabellen kan det ses, at nogle af værdierne ligger meget tæt på hinanden. Det var ikke muligt, at se alle spectral linjerne indtil man zoomede ind i intervallet 8-10, da der her ligger linjerne rigtigt tætte. Det ser ud som om vi har fundet alle de karakteristiske linjer, angivet på det udlveret ark. Derudover har vi fundet nogle spikes ved lavere energier der ikke er derpå.
+
 \section{Vinkel for metaler og intensitet}
 \begin{figure}[H]
 \begin{centering}
@@ -239,7 +248,7 @@ På tabellen kan det ses, at nogle af værdierne ligger meget tæt på hinanden.
 \par\end{centering}
 \caption{\label{cap:2ien} Anode spectrum for wolfram med forskellige filtre }
 \end{figure}
-Filteret gør at der generelt kommer mindre stråling igennem, da  fotonerne skal passere mere stof. Der må være en spike, hvis der ikke sker karakteristik stråling i filteret, da ellers vil meget af denne energi istedet løsrive elektroner i filteret fremfor at ramme detektoren. Vi kan se ved den første store spike på grafen uden filter er Nickel den eneste der ikke spiker. Det skyldes at der også sker karakteristisk stråling i Nickel ved denne energi. Nemlig 8.3 keV for $K_{edge}$. De andre har stadig en spike, da deres karakteristiske værdier ligger lidt over. Nickel fortsætter derefter med konstant at ligge cirka samme sted. Copper kommer ned og møder nickel ved værdien 8.9 keV som også er her den har $K_{edge}$. Til sidst kan det ses at Zinks absorbtion stiger ved 9.6 keV som også er her $K_{edge}$ ligger for zinc. Det er det samme som kan ses i figuren nedenfor. 
+Filteret gør, at der generelt kommer mindre stråling igennem, da  fotonerne skal passere mere stof. Der må være en spike, hvis der ikke er sket karakteristik stråling i filteret, da ellers vil meget af denne energi i stedet løsrive elektroner i filteret fremfor at ramme detektoren. Vi kan se ved den første store spike på grafen uden filter er Nickel den eneste der ikke spiker. Det skyldes at der også sker karakteristisk stråling i Nickel ved denne energi. Nemlig 8.3 keV for $K_{edge}$. De andre har stadig en spike, da deres karakteristiske værdier ligger lidt over. Nickel fortsætter derefter med konstant at ligge cirka samme sted. Copper kommer ned og møder nickel ved værdien 8.9 keV som også er her den har $K_{edge}$. Til sidst kan det ses at Zinks absorbtion stiger ved 9.6 keV som også er her $K_{edge}$ ligger for zinc. Det er det samme som kan ses i figuren nedenfor. 
 
 
 \begin{figure}[H]
@@ -250,8 +259,7 @@ Filteret gør at der generelt kommer mindre stråling igennem, da  fotonerne ska
 \caption{\label{cap:2ien} Anode spectrum af forholdet mellem I og $I_0$ }
 \end{figure}
 Nickel, Copper og Zink ligger lige efter hinanden i det periodiske system, derfor er deres attenueringskonstant meget ens og det er deres densitet også. Derfor følger de hinanden meget godt alle de steder der ikke skyldes karakteristisk stråling. 
-\\ Hvis vi kigger de steder der skere drastiske fald, skyldes det karakteristik stråling. Kigger vi ved energierne på energierne stemmer det over med $K_{edge}$. For Nickel er den 8333 eV, Copper er 8979 eV og Zink 9659 eV. (Spørg om det er Kalpha eller edge) \\
-Der sker et fald her, fordi fotonerne har netop den energi der kræves for at løsrive en elektron, og derfor absorberes stråligen og derfor falder I mens $I_0$ er uændret. 
+\\ Hvis vi kigger de steder der skere drastiske fald, skyldes det karakteristik stråling. Kigger vi ved energierne på energierne stemmer det over med $K_{edge}$. For Nickel er den 8333 eV, Copper er 8979 eV og Zink 9659 eV. Der sker et fald her, fordi fotonerne har netop den energi der kræves for at løsrive en elektron, og derfor absorberes strålingen, og derfor falder I mens $I_0$ er uændret. 
 \\
 Det kan også ses, at graferne er stigende før og efter deres store fald. Hvilket skyldes at en stigning i foton energien medførerer en formindskning i attenueringskoefficienten og dermed stiger forholdet mellem start og slut intensitet. 
 
@@ -323,10 +331,10 @@ Udregningerne kan ses i samme appendix
 Problemet ved at andvende en molybdæn er at hvis man skal bruge det til at tage røntgen fotografier af mennesker med, kan røntgenstrålerne ikke passerer få cm vand eller calcium, hvilket vil betyde at hvis man skal teste for fx en brækket arm vil kontrasten mellem knogle og væske i kroppen værre meget lille, da næsten alt røngtenstrålingen absorberes inden det når igennem armen. Mens wolfram godt kan passerer vand rimeligt godt, men ikke calcium og dermed vil der opstå en større kontrast mellem de to på et røntgen fotografi. Hverken af dem kan dog passerer bly, men det har ikke de store problemer inden for medicinsk billededannelse, da kroppen ikke består af store mængder af bly. 
 
 \subsection{\bold{Opgave 5}}
-Vi løser opgaven med denne formel $\frac{I(z)}{I_0}=e^{-\mu z}$. vi finder $\mu\over\rho$ i Nist til $2,032\cdot 10^{-1} \frac{g}{cm^2}$ og densiteten af Polymethyl Methacrylate til at være $1,18\frac{cm^3}{g}$\\
+Vi løser opgaven med denne formel $\frac{I(z)}{I_0}=e^{-\mu z}$. vi finder $\mu\over\rho$ i Nist til $2,032\cdot 10^{-1} \frac{cm^2}{g}$ og densiteten af Polymethyl Methacrylate til at være $1,18\frac{g}{cm^3}$\\
 $\mu$ findes
 \begin{equation*}
-    \mu=2,032\cdot10^{-1}\frac{g}{cm^2}\cdot1,18\frac{cm^3}{g}=0,24cm^{-1}
+    \mu=2,032\cdot10^{-1}\frac{cm^2}{g}\cdot1,18\frac{g}{cm^3}=0,24cm^{-1}
 \end{equation*}
 $I(z)\over Z_0$ findes
 \begin{equation*}
@@ -397,6 +405,8 @@ For 100 keV
 \begin{thebibliography}{} % det simple alternativ til BibTeX
 \bibitem{collins2000}
 Phillip G. Collins and Phaedon Avouris, Scientific American, \textbf{283}, 62 (2000)
+ \bibitem{X-ray absorption and emmission energies of elements}
+    xrayabsorbtion.org/xraytable, 19 April 2020
 \end{thebibliography}
 
 \newpage 
@@ -414,13 +424,17 @@ https://www.nist.gov/pml/x-ray-mass-attenuation-coefficients
 \includegraphics[height=14cm]{Opgave 4.jpg}
 \hspace{1cm}
 \par\end{centering}
-\caption{\label{cap:2ien} Anode spectrum af forholdet mellem I og $I_0$ }
 \end{figure}
 
 
 
 
 \section{Fordeling af arbejde}
-\includegraphics{Bidragsskema_2022}
+\begin{figure}[H]
+\begin{centering}
+\includegraphics[height=20cm]{Bidragsskema_2022}
+\hspace{0cm}
+\par\end{centering}
+\end{figure}
 % her skal vi have documentet med arbejdsfordelingen så forlæsere kan se hvad ved har lavet
 \end{document}
